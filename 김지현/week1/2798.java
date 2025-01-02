@@ -2,7 +2,7 @@ package 김지현.week1;
 
 import java.util.Scanner;
 
-class Main {
+class BlackjackSolver {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
