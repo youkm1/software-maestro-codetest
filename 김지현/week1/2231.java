@@ -2,7 +2,7 @@ package 김지현.week1;
 
 import java.util.Scanner;
 
-class Main {
+class DecomposedSum {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         int m = scan.nextInt();
