@@ -1,8 +1,8 @@
 https://school.programmers.co.kr/learn/courses/30/lessons/1844 를 정리한것입니다. 
 
 <h2>기존 코드</h2>
+    
 
-    import java.util.Stack;
     import java.util.*;
 
     class Solution {
@@ -46,5 +46,44 @@ https://school.programmers.co.kr/learn/courses/30/lessons/1844 를 정리한것�
     }
 
 ------
+최단 거리의 경우, BFS를 선택할것@@@
 
-<h2>DFS를 쓰는 올바른 방법</h2>
+<h2>BFS를 쓰는 올바른 방법</h2>
+
+    import java.util.*;
+
+    class Solution {
+        public int Soluution(int[][] maps){
+            int rows = maps.length;
+            int cols = maps[0].length;
+                                //상    하     좌     우                     
+            int[][] directions = {{-1,0},{1,0},{0,-1},{0,1}};
+            Queue<int[]> q = new LinkedList<>();
+            q.offer(new int[]{0,0,1});
+
+            while (!q.isEmpty()){
+                int[] current = q.poll();
+                int row = current[0];
+                int col = current[1];
+                int distance = current[2];
+
+                if (row == rows - 1 && col == cols - 1) return distance;
+                
+                for (int[] dir: directions) {
+                    int newR = row + dir[0];
+                    int newC = col + dir[1];
+                    
+                    if (newR >= 0 && newC >= 0 && newR < rows && newC < cols && maps[newR][newC] == 1) {
+                        maps[newR][newC] == 0;
+                        q.offer(new int[]{newR,newC,distance+1});
+                        
+                    }
+                }
+            }
+            return -1;
+        }
+    }
+
+    
+
+    
