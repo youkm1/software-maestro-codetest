@@ -15,8 +15,8 @@ class Solution {
       v2 = v1/cnt;
 
       std = atk[0];
-      now = Math.min(health, now + (v1*bandage[1]));
-      now = Math.min(health, now + (v1*bandage[2]));
+      now = Math.min(health, now + (v1 * bandage[1]));
+      now = Math.min(health, now + (v2 * bandage[2]));
 
       now -= atk[1];
   }
