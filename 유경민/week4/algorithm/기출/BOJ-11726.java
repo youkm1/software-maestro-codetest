@@ -1,11 +1,11 @@
 import java.io.*;
 
 public class Main {
-    static long mod = 10007;
+    static int mod = 10007;
     public static void main(String[] args) throws IOException {
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(bf.readLine());
-        long[] dp = new long[1001];
+        int[] dp = new int[1001];
         dp[1] = 1;
         dp[2] = 2;
         
